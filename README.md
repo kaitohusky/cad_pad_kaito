@@ -94,12 +94,6 @@ This allows columns to be pulled low when a row is driven low and a switch is pr
 - LEDs placed near each switch footprint (outside switch courtyard)
 - Diodes placed close to switches (can be bottom-side to free space and simplify routing)
 
-### Routing Strategy
-- Rows routed primarily in one direction (horizontal)
-- Columns routed primarily orthogonally (vertical)
-- Wider traces for 5V/GND distribution to the LED chain
-- Ground pour for better return paths and reduced noise (especially for LED data)
-
 ---
 
 ## Assembly
@@ -127,7 +121,41 @@ Firmware/main.py
 This project uses **CircuitPython** with a **KMK-style** approach (single `main.py`).  
 The firmware scans the 3×5 matrix and sends USB keyboard events to the host computer. Keys are currently mapped to **placeholder shortcuts** that can be replaced with the exact shortcuts used by your CAD tool.
 
-### Intended Shortcut Usage (Example)
+---
+
+## BOM (Bill of Materials)
+
+### Core (required)
+
+| Item | Qty | Notes |
+|------|-----|------|
+| Seeed Studio XIAO RP2040 (DIP) | 1 | Main controller, USB-C |
+| Custom PCB (≤100×100 mm) | 1 | From this repo KiCad files |
+| Cherry MX compatible switches | 15 | Any MX-style (linear/tactile/clicky) |
+| Keycaps (1u) | 15 | Any MX keycap set |
+| Signal diodes | 15 | **1 per key** (ex: 1N4148 THT or 1N4148W SMD) |
+| USB cable (USB-C) | 1 | For power + data |
+
+### Optional (RGB backlight)
+
+| Item | Qty | Notes |
+|------|-----|------|
+| SK6812 / NeoPixel-compatible addressable LEDs | 15 | Per-key RGB (choose SMD package that matches footprint) |
+| Decoupling capacitor for LED power rail | 1–2 | Typical: 100 µF electrolytic + 0.1 µF ceramic near LED rail |
+| Series resistor on LED data line | 1 | Typical: 330–470 Ω between GPIO and first LED DIN |
+
+### Optional (mechanical)
+
+| Item | Qty | Notes |
+|------|-----|------|
+| Case / plate (3D printed or laser cut) | 1 | If you want a rigid enclosure |
+| Rubber feet | 4 | Desk grip |
+| M2 / M3 screws + standoffs | 4–8 | Depends on case design |
+
+---
+
+## Intended Shortcut Usage (Example)
+
 Typical categories to map:
 - Sketch tools (line, rectangle, circle)
 - Constraints (coincident, parallel, perpendicular)
