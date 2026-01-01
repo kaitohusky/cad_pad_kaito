@@ -32,7 +32,7 @@ CAD workflows rely heavily on shortcuts (sketch tools, constraints, navigation, 
 
 ## Schematic
 
-![Schematic](docs/schematic.png)
+![Schematic](schematic.png)
 
 ---
 
@@ -85,7 +85,7 @@ This allows columns to be pulled low when a row is driven low and a switch is pr
 
 ## PCB Layout
 
-![PCB Layout](docs/pcb_layout.png)
+![PCB Layout](pcb_layout.png)
 
 ### Mechanical / Placement
 - Key spacing: **19.05 mm** center-to-center (standard MX spacing)
@@ -98,7 +98,7 @@ This allows columns to be pulled low when a row is driven low and a switch is pr
 
 ## Assembly
 
-![Assembly](docs/assembly.png)
+![Assembly](assembly.png)
 
 ### Assembly Steps
 1. Solder the diodes (verify stripe orientation toward row nets)
